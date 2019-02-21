@@ -1,5 +1,5 @@
 body {
-    background-color: #dddddd;
+    background-color: #D9C2E2;
     text-align: center;
 }
 
@@ -14,18 +14,19 @@ body {
 
 
 .cell{
-        width: 100px;
-        height: 100px;
+        width: 8vw;
+        height: 8vw;
+        max-height: 11vh;
+        max-width: 11vh;
         display: inline-block;
-        margin: 2px;
+        margin: 0px;
        
  }
 
  .row {
     display: flex;
     justify-content: space-evenly;
-    width: 800px;
-    height: 100px;
+   
  }
 
  .black {
@@ -39,6 +40,22 @@ body {
 
 
  .checker {
+            margin: 10%;
+            border-radius: 50%;
+            height: 80%;
+            width: 80%;
+        }
+        .red-checker {
+            background-image: url("go-stone-white.png");
+            background-size: cover;
+        
+        }
+        .black-checker {
+            background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Realistic_Go_Stone.svg/1024px-Realistic_Go_Stone.svg.png");
+            background-size: cover;
+        }
+
+
             margin: 10%;
             border-radius: 50%;
             height: 80%;
