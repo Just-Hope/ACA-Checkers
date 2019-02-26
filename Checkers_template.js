@@ -8,12 +8,20 @@ function cellTemplate(rowNum, cellNum) {
     
     if (isCellEven != isRowEven) {
         // Black cell
-return `<div id="cell-${rowNum}-${cellNum}" class="cell black" onclick="toggle(this)">
-<div class="checker red-checker"></div>
-<div class="checker black-checker" hidden></div>
-</div>
-`
-    } else
+let cellString = `
+<div id="cell-${rowNum}-${cellNum}" class="cell black">`
+   if (rowNum <=3) {
+       cellString = cellString + `<div class="checker red-checker"></div>`
+   } else if (rowNum >= 6) {
+    cellString = cellString + `<div class="checker black-checker"></div>`
+   } else {
+    cellString = cellString + `<div class="checker black-checker" hidden="true"></div>`
+   }
+cellString = cellString + `</div>`
+return cellString
+ 
+
+} else
     //white cell
     return `<div id="cell-${rowNum}-${cellNum}" class="cell red"></div>`
 }
