@@ -1,25 +1,22 @@
-function toggle(cell) {
+$(document).ready(function () {
     console.log('document ready')
-    let redChecker = cell.children[0]
-    let blackChecker = cell.children[1]
+    $('.black.cell').click(toggle)
+})
 
- 
-    
-    if(!redChecker.hidden && blackChecker.hidden) {//If the white checker is showing, change it to:
-        redChecker.hidden = true //Both checkers are hidden
-        blackChecker.hidden = true
- 
-    } else if(redChecker.hidden && blackChecker.hidden){//If both checkers are hidden, change it to:
-        redChecker.hidden = true//Only black checker is showing
-        blackChecker.hidden = false
-        
-    
-    } else if(redChecker.hidden && !blackChecker.hidden) {//If black checker is showing, change it to:
-        redChecker.hidden = true //both checkers are hidden
-        blackChecker.hidden = true
-        
-    
-    }  
-    
+function toggle() {
+    let checker = $(this).children().first()
+    checker.toggle()
+    if(!checker.is(":visible")){
+        switchColor(checker);
+    }
 }
 
+function switchColor(checker) {
+    if (checker.hasClass('black-checker')) {
+        checker.removeClass('black-checker')
+        checker.addClass('red-checker')
+    } else {
+        checker.addClass('black-checker')
+        checker.removeClass('red-checker')
+    }
+}
