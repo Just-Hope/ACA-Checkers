@@ -1,3 +1,18 @@
+var checkers = [
+    {row: 1, cell: 2, color: 'white'},
+    {row: 1, cell: 4, color: 'white'},
+    {row: 1, cell: 6, color: 'white'},
+    {row: 1, cell: 8, color: 'white'},
+    {row: 2, cell: 1, color: 'white'},
+    {row: 2, cell: 3, color: 'white'},
+    {row: 2, cell: 5, color: 'white'},
+    {row: 2, cell: 7, color: 'white'},
+    {row: 3, cell: 2, color: 'white'},
+    {row: 3, cell: 4, color: 'white'},
+    {row: 3, cell: 6, color: 'white'},
+    {row: 3, cell: 8, color: 'white'},
+]
+
 function renderBoard() {
     return `
     ${renderRow(1)}
@@ -10,7 +25,6 @@ function renderBoard() {
     ${renderRow(8)}
     `
 }
-
 
 function renderRow(rowNum) {
     return `
@@ -27,32 +41,27 @@ function renderRow(rowNum) {
     `
 }
 
-
 function renderCell(rowNum, cellNum) {
-    if (determineColor(rowNum, cellNum) === 'black') { 
-        // add a Black cell
-let cellString = `
-<div id="cell-${rowNum}-${cellNum}" class="cell black">`
-   if (rowNum <=3) {
-       cellString = cellString + renderChecker('red')
-   } else if (rowNum >= 6) {
-    cellString = cellString + renderChecker('black')
-   } else {
-    cellString = cellString + renderChecker('black', 'hidden')
-   }
-cellString = cellString + `</div>`
-return cellString
- 
-
+    if (cellColor(rowNum, cellNum) === 'black') { 
+return `<div id="cell-${rowNum}-${cellNum}" class="cell black"> </div>`
 } else
-    //add a white cell
-    return `<div id="cell-${rowNum}-${cellNum}" class="cell red"></div>`
+    return `<div id="cell-${rowNum}-${cellNum}" class="cell white"></div>`
 }
 
 
 
-function renderChecker(color, hidden) {
-    return `<div class="checker ${color}-checker" ${hidden}></div>`
+function renderCheckers(){
+    console.log('rendering checkers')
+    for(let i=0; i<checkers.length; i++) {
+        let checker = checkers[i];
+        console.log(checker)
+        $(`#cell-${checker.row}-${checker.cell}`).html(renderChecker(checker.color))
+    }
+}
+
+
+function renderChecker(color) {
+    return `<div class="checker ${color}-checker"></div>`
 }
 
 function parity(num) {
@@ -60,12 +69,11 @@ function parity(num) {
     else return 'odd'
 }
 
-
-
-function determineColor(rowNum, cellNum) {
-    if(parity (rowNum) === parity(cellNum)) return 'red'
+function cellColor(rowNum, cellNum) {
+    if(parity (rowNum) === parity(cellNum)) return 'white'
     else return 'black'
 }
+
 
 
 
