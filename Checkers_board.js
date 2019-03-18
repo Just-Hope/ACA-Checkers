@@ -1,7 +1,8 @@
 $(document).ready(function () {
     console.log('document ready')
-    $('#board-container').html(boardTemplate())
-    $('.black.cell').click(toggle)
+    $('#board-container').html(renderBoard())
+   $('.black.cell').click(toggle)
+   renderCheckers()
 })
 
 function toggle() {
@@ -15,9 +16,9 @@ function toggle() {
 function switchColor(checker) {
     if (checker.hasClass('black-checker')) {
         checker.removeClass('black-checker')
-        checker.addClass('red-checker')
+        checker.addClass('white-checker')
     } else {
         checker.addClass('black-checker')
-        checker.removeClass('red-checker')
+        checker.removeClass('white-checker')
     }
 }
