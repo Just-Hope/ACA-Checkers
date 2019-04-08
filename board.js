@@ -1,8 +1,8 @@
 $(document).ready(function () {
     console.log('document ready')
     $('#board-container').html(renderBoard())
-   //$('.black.cell').click(toggle)
-    $('.black.cell').click(selectChecker)
+    $('.checker').click(selectChecker)
+    console.log('Adding the click handler to the checker now!')
    renderCheckers()
 })
 
