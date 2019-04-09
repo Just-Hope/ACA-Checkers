@@ -14,14 +14,16 @@ body {
 
 
 .cell{
-        width: 8vw;
-        height: 8vw;
-        max-height: 11vh;
-        max-width: 11vh;
+        width: 10vmin;
+        height: 10vmin;
+       /*max-height: 11vh;
+        max-width: 11vh;*/
         display: inline-block;
         margin: 0px;
        
  }
+
+ 
 
  .row {
     display: flex;
@@ -33,7 +35,7 @@ body {
     background-image: url("http://sr.photos3.fotosearch.com/bthumb/CSP/CSP992/k13726987.jpg");
 
 }
-.red {
+.white {
     background-image: url("http://t13.deviantart.net/gEig6lSUF28_AGK-p2USYJ4Iijw=/fit-in/150x150/filters:no_upscale():origin()/pre08/f861/th/pre/f/2014/352/a/c/white_marble_seamless_by_hugolj-d8a94bq.jpg");
     opacity: 0.5;
 }
@@ -45,29 +47,21 @@ body {
             height: 80%;
             width: 80%;
         }
-        .red-checker {
+        
+.white-checker {
             background-image: url("go-stone-white.png");
             background-size: cover;
         
         }
-        .black-checker {
+       
+       
+ .black-checker {
             background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Realistic_Go_Stone.svg/1024px-Realistic_Go_Stone.svg.png");
             background-size: cover;
         }
 
-
-            margin: 10%;
-            border-radius: 50%;
-            height: 80%;
-            width: 80%;
-        }
-        .red-checker {
-            background-image: url("go-stone-white.png");
-            background-size: cover;
-        
-        }
-        .black-checker {
-            background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Realistic_Go_Stone.svg/1024px-Realistic_Go_Stone.svg.png");
-            background-size: cover;
-        }
-
+.selected {
+    margin: 0;
+    border: 1vmin solid rgba(225,225,225,0.33);
+    background-repeat: no-repeat;
+}
