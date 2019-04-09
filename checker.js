@@ -30,29 +30,25 @@ var checkers = [
 function renderCheckers(){
     console.log('rendering checkers')
     clearBoard()
+    $(`.black.cell`).click(moveSelectedCheckerHere)
     for(let i=0; i<checkers.length; i++) {
         let checker = checkers[i];
         console.log(checker)
         $(`#cell-${checker.row}-${checker.cell}`).html(renderChecker(i, checker.color))
-        $(`#cell-${checker.row}-${checker.cell}`).click('')
+        $(`#cell-${checker.row}-${checker.cell}`).unbind('click')
     }
+    $('.checker').click(selectChecker)
 }
 
 function renderChecker(i, color) {
-    return `<div class="checker-wrapper"><div id="checker-${i}" class="checker ${color}-checker"></div></div>`
+    return `<div id="checker-${i}" class="checker ${color}-checker" bacon="${i}"></div>`
 }
 
 function selectChecker() {
     $(`.selected`).removeClass(`selected`)
     let checker = $(this)
-    let id = checker.attr('id')
-    console.log('selecting checker: ', checker)
-    console.log(`the id of the checker you selected is ${id}`)
 
-    let stringParts = id.split('-')
-    console.log(`bacon = `, stringParts) 
-
-    let checkerIndex = stringParts[1]
+    let checkerIndex = checker.attr('bacon')
     console.log(`checkerIndex == `, checkerIndex)
 
     selectedChecker = checkers[checkerIndex]
