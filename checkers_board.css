@@ -16,7 +16,7 @@ body {
 .cell{
         width: 10vmin;
         height: 10vmin;
-       /*max-height: 11vh;
+      /* max-height: 11vh;
         max-width: 11vh;*/
         display: inline-block;
         margin: 0px;
@@ -64,4 +64,9 @@ body {
     margin: 0;
     border: 1vmin solid rgba(225,225,225,0.33);
     background-repeat: no-repeat;
+}
+
+.checker-wrapper {
+    height: 100%;
+    width: 100%;
 }
