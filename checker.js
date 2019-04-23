@@ -45,8 +45,15 @@ function renderChecker(i, color) {
 }
 
 function selectChecker() {
-    $(`.selected`).removeClass(`selected`)
     let checker = $(this)
+    if(checker.hasClass(`selected`)) {
+        console.log(`this checker was already selected`)
+        remove(checker)
+        selectedChecker = undefined
+        return
+    }
+
+    $(`.selected`).removeClass(`selected`)
 
     let checkerIndex = checker.attr('bacon')
     console.log(`checkerIndex == `, checkerIndex)
@@ -57,3 +64,8 @@ function selectChecker() {
     checker.addClass(`selected`)
 }
 
+function remove(checker) {
+    console.log('removing checker: ', checker)
+    console.log(`removing this...`, selectedChecker)
+    
+}
