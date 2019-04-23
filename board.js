@@ -75,3 +75,5 @@ function clearBoard() {
     $(`.black.cell`).html(``)
     $(`.black.cell`).unbind('click')
 }
+
+
