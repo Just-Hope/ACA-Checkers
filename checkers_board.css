@@ -70,3 +70,7 @@ body {
     height: 100%;
     width: 100%;
 }
+
+.out-of-play {
+    height: 10vmin;
+}
