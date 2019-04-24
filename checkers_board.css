@@ -66,11 +66,9 @@ body {
     background-repeat: no-repeat;
 }
 
-.checker-wrapper {
-    height: 100%;
-    width: 100%;
-}
+
 
 .out-of-play {
-    height: 10vmin;
+    /*height: 10vmin;
+    width: 10vmin;*/
 }
