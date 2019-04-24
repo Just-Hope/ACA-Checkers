@@ -51,7 +51,7 @@ function renderChecker(i, color) {
     if(checkers[i].isKing)  {
     return `
             <div id="checker-${i}" class="checker ${color}-checker" bacon="${i}">
-                <img src="https://cdn4.iconfinder.com/data/icons/holiday-hat/296/hat-10-512.png" style="width: 80%; height: 80%;"
+            <i class="fas fa-crown" style="color: yellow;"></i>
             </div>
         `
     } else
