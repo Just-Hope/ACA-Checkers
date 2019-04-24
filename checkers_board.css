@@ -6,7 +6,7 @@ body {
 #board-container{
     background-image: url("http://getwallpapers.com/wallpaper/full/3/c/3/29286.jpg");
     display: inline-block;
-    padding: 2%;
+    padding: 5vmin;
     background-repeat: no-repeat;
     background-position: center;
 
@@ -17,7 +17,7 @@ body {
         width: 8.5vmin;
         height: 8.5vmin;
         display: inline-block;
-        margin: 0px;
+        margin: .3vmin;
        
  }
 
@@ -44,11 +44,15 @@ body {
             border-radius: 50%;
             height: 80%;
             width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
 .white-checker {
             background-image: url("go-stone-white.png");
             background-size: cover;
+            color: #444444;
         
         }
        
@@ -56,6 +60,7 @@ body {
  .black-checker {
             background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Realistic_Go_Stone.svg/1024px-Realistic_Go_Stone.svg.png");
             background-size: cover;
+            color: #cccccc;
         }
 
 .selected {
@@ -69,4 +74,8 @@ body {
 .out-of-play {
     /*height: 10vmin;
     width: 10vmin;*/
+}
+
+i {
+    font-size: 3vmin;
 }
