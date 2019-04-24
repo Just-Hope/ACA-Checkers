@@ -51,7 +51,7 @@ function renderChecker(i, color) {
     if(checkers[i].isKing)  {
     return `
             <div id="checker-${i}" class="checker ${color}-checker" bacon="${i}">
-            <i class="fas fa-crown" style="color: yellow;"></i>
+            <i class="fas fa-crown"></i>
             </div>
         `
     } else
