@@ -25,6 +25,7 @@ var checkers = [
     {row: 8, cell: 3, color: 'black'},
     {row: 8, cell: 5, color: 'black'},
     {row: 8, cell: 7, color: 'black'},
+
 ]
 
 function renderCheckers(){
@@ -34,22 +35,34 @@ function renderCheckers(){
     for(let i=0; i<checkers.length; i++) {
         let checker = checkers[i];
         console.log(checker)
-        $(`#cell-${checker.row}-${checker.cell}`).html(renderChecker(i, checker.color))
-        $(`#cell-${checker.row}-${checker.cell}`).unbind('click')
+        if (checker.row && checker.cell) {
+            $(`#cell-${checker.row}-${checker.cell}`).html(renderChecker(i, checker.color))
+            $(`#cell-${checker.row}-${checker.cell}`).unbind('click')
+        } else {
+            console.log(`put `, checker, ` into out of play`)
+
+            $(`#out-of-play-${checker.color}`).append(`<div class="cell">${renderChecker(i, checker.color)}</div>`)
+        }
     }
     $('.checker').click(selectChecker)
 }
 
 function renderChecker(i, color) {
-    return `<div id="checker-${i}" class="checker ${color}-checker" bacon="${i}"></div>`
+    if(checkers[i].isKing)  {
+    return `
+            <div id="checker-${i}" class="checker ${color}-checker" bacon="${i}">
+                <img src="https://cdn4.iconfinder.com/data/icons/holiday-hat/296/hat-10-512.png" style="width: 80%; height: 80%;"
+            </div>
+        `
+    } else
+    return ` <div id="checker-${i}" class="checker ${color}-checker" bacon="${i}"></div>`
 }
 
 function selectChecker() {
     let checker = $(this)
     if(checker.hasClass(`selected`)) {
         console.log(`this checker was already selected`)
-        remove(checker)
-        selectedChecker = undefined
+        remove()
         return
     }
 
@@ -64,8 +77,10 @@ function selectChecker() {
     checker.addClass(`selected`)
 }
 
-function remove(checker) {
-    console.log('removing checker: ', checker)
+function remove() {
     console.log(`removing this...`, selectedChecker)
-    
+    selectedChecker.row = undefined
+    selectedChecker.cell = undefined
+    selectedChecker = undefined
+    renderCheckers()
 }
