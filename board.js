@@ -4,8 +4,6 @@ $(document).ready(function () {
     renderCheckers()
 })
 
-
-
 function renderBoard() {
     return `
     ${renderRow(1)}
@@ -45,7 +43,6 @@ function parity(num) {
     if (num % 2 === 0) return 'even'
     else return 'odd'
 }
-
 function cellColor(rowNum, cellNum) {
     if(parity (rowNum) === parity(cellNum)) return 'white'
     else return 'black'
@@ -64,6 +61,13 @@ function moveSelectedCheckerHere() {
 
         selectedChecker.row = idParts[1]
         selectedChecker.cell = idParts[2]
+
+        console.log(`the checker I'm moving is `, selectedChecker.color)
+        if (selectedChecker.color == `black` && selectedChecker.row == 1) {
+            console.log(`I'm moving a black checker to the white home row`)
+            selectedChecker.isKing = true
+        }
+
         selectedChecker = undefined
         renderCheckers()
     } else {
@@ -74,6 +78,5 @@ function moveSelectedCheckerHere() {
 function clearBoard() {
     $(`.black.cell`).html(``)
     $(`.black.cell`).unbind('click')
+    $(`.out-of-play`).html(``)
 }
-
-
