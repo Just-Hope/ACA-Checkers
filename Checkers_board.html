@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <title>Checkers Game</title>
     <link rel="stylesheet" href="checkers_board.css">
+
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
+      <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+         <b><u>How to Play</u></b> <br><br>Taking a Turn <br>
+
+           <font size="2">Typically the darker color pieces moves first. Each player takes their turn by moving a piece. Pieces are always moved diagonally and can be moved in the following ways:
+            Diagonally in the forward direction (towards the opponent) to the next dark square.
+            If there is one of the opponent's pieces next to a piece and an empty space on the other side, you jump your opponent and remove their piece. You can do multiple jumps if they are lined up in the forward direction. <br>Note: if you have a jump, you have no choice but to take it.
+         </font> <br><br>
+
+         King Pieces <br>
+
+         <font size="2">The last row is called the king row. If you get a piece across the board to the opponent's king row, that piece becomes a king. Another piece is placed onto that piece so it is now two pieces high. King pieces can move in both directions, forward and backward. 
+         
+         Once a piece is kinged, the player must wait until the next turn to jump out of the king row. </font><br><br>
+
+
+Winning the Game<br>
+
+<font size="2">You win the game when the opponent has no more pieces or can't move (even if he/she still has pieces). If neither player can move then it is a draw or a tie. 
+   </font> </div>
+
    <div id="out-of-play-black" class="out-of-play">something</div>
    <div id="board-container"></div>
    <div id="out-of-play-white" class="out-of-play"></div>
+
+
 <script src="checker.js"></script>    
 <script src="board.js"></script>
 </body>
