@@ -84,3 +84,4 @@ function remove() {
     selectedChecker = undefined
     renderCheckers()
 }
+
