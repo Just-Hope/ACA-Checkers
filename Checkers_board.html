@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkers Game</title>
+    <link rel="icon" type="image/ico" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Checkermotoslogo.svg/240px-Checkermotoslogo.svg.png"></i>
     <link rel="stylesheet" href="checkers_board.css">
 
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <script>
+   $(document).ready(function(){
+     $("#hide").click(function(){
+       $("textarea").hide();
+     });
+     $("#show").click(function(){
+       $("textarea").show();
+     });
+   });
+   </script>
+
 </head>
+
+
+
 <body>
+
       <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
          <b><u>How to Play</u></b> <br><br>Taking a Turn <br>
@@ -35,11 +56,31 @@ Winning the Game<br>
    <div id="out-of-play-white" class="out-of-play"></div>
 
 
+   <p>Hide or Show the Text Box and Board Below:</p>
+   <button class="button" id="hide">Hide</button>
+   <button class="button" id="show">Show</button>
+   <br>
+   <br>
+ 
+
+
+Text:<br>
+<textarea id="myTextarea">
+Write something here...
+</textarea>
+<p>Click the button to set the text area to read-only.</p>
+<button type="button" onclick="myFunction()">Make this text <b>Read Only</b></button>
+<script>
+function myFunction() {
+  document.getElementById("myTextarea").readOnly = "true";
+}
+</script>
+
+
+
+
 <script src="checker.js"></script>    
 <script src="board.js"></script>
+
 </body>
 </html>
-
-
-
-
